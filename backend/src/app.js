@@ -39,6 +39,28 @@ app.get('/health', (req, res) => {
 
 // Rutas de API v1
 const API_PREFIX = '/api/v1';
+
+// Ruta informativa de bienvenida en la raíz y en el prefijo API
+const apiInfoHandler = (req, res) => {
+  res.json({
+    ok: true,
+    nombre: 'PC Builder & Catalog API',
+    version: '1.0.0',
+    estado: 'online',
+    rutasDisponibles: [
+      `${API_PREFIX}/componentes`,
+      `${API_PREFIX}/categorias`,
+      `${API_PREFIX}/marcas`,
+      `${API_PREFIX}/auth`,
+      `${API_PREFIX}/usuarios`,
+      '/health',
+    ],
+  });
+};
+
+app.get('/', apiInfoHandler);
+app.get(API_PREFIX, apiInfoHandler);
+
 app.use(`${API_PREFIX}/auth`, authRoutes);
 app.use(`${API_PREFIX}/usuarios`, usuariosRoutes);
 app.use(`${API_PREFIX}/categorias`, categoriasRoutes);
