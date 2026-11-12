@@ -6,7 +6,7 @@ const authService = new AuthService();
 const COOKIE_OPTIONS = {
   httpOnly: true,
   secure: ENV.NODE_ENV === 'production',
-  sameSite: 'lax',
+  sameSite: ENV.NODE_ENV === 'production' ? 'none' : 'lax',
   maxAge: 2 * 60 * 60 * 1000, // 2 horas
 };
 

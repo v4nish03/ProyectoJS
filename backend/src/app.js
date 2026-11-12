@@ -15,6 +15,11 @@ import componentesRoutes from './modules/componentes/componentes.routes.js';
 
 export const app = express();
 
+// Confianza en proxies inversos (necesario en Render, Railway, etc. para HTTPS y cookies seguras)
+if (ENV.NODE_ENV === 'production') {
+  app.set('trust proxy', 1);
+}
+
 // Seguridad HTTP
 app.use(helmet());
 app.use(cors({

@@ -15,7 +15,10 @@ Para garantizar un desarrollo ágil y sin colisiones entre los 3 integrantes, el
 | **Integrante 3** | **Frontend SPA, UI/UX, Escena 3D y Formularios** | [TAREAS_INTEGRANTE_3_FRONTEND_3D.md](file:///home/v4/Usfx/SegundoSemestre/ProgramacionIntermedia/Proyecto/docs/TAREAS_INTEGRANTE_3_FRONTEND_3D.md) |
 
 Consulte también:
+- [Guía de Despliegue en la Nube (Neon & Render)](file:///home/v4/Usfx/SegundoSemestre/ProgramacionIntermedia/Proyecto/docs/GUIA_DESPLIEGUE_RENDER_NEON.md)
 - [Guía de Instalación Rápida para Otros Equipos](file:///home/v4/Usfx/SegundoSemestre/ProgramacionIntermedia/Proyecto/GUIA_INSTALACION.md)
+- [Arquitectura y Explicación Exhaustiva del Backend](file:///home/v4/Usfx/SegundoSemestre/ProgramacionIntermedia/Proyecto/docs/ARQUITECTURA_Y_EXPLICACION_BACKEND.md)
+- [Arquitectura y Explicación Exhaustiva del Frontend](file:///home/v4/Usfx/SegundoSemestre/ProgramacionIntermedia/Proyecto/docs/ARQUITECTURA_Y_EXPLICACION_FRONTEND.md)
 - [Documentación Exhaustiva de Clases y POO (Backend & Frontend)](file:///home/v4/Usfx/SegundoSemestre/ProgramacionIntermedia/Proyecto/docs/DOCUMENTACION_CLASES_POO.md)
 - [Convenciones de Trabajo y Contrato de API](file:///home/v4/Usfx/SegundoSemestre/ProgramacionIntermedia/Proyecto/docs/CONVENCIONES_Y_CONTRATO_API.md)
 
