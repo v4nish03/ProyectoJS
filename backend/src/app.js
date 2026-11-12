@@ -22,8 +22,31 @@ if (ENV.NODE_ENV === 'production') {
 
 // Seguridad HTTP
 app.use(helmet());
+
+// Configuración flexible de orígenes permitidos para CORS
+const origenesConfigurados = (ENV.FRONTEND_URL || 'http://localhost:5173')
+  .split(',')
+  .map((url) => url.trim().replace(/\/$/, ''))
+  .filter(Boolean);
+
 app.use(cors({
-  origin: ENV.FRONTEND_URL,
+  origin: (origin, callback) => {
+    // Permitir llamadas sin cabecera origin (Postman, curl, healthchecks de Render)
+    if (!origin) return callback(null, true);
+
+    const origenLimpio = origin.replace(/\/$/, '');
+    const esPermitido =
+      origenesConfigurados.includes(origenLimpio) ||
+      (ENV.NODE_ENV === 'production' && origenLimpio.endsWith('.onrender.com')) ||
+      origenLimpio.includes('localhost') ||
+      origenLimpio.includes('127.0.0.1');
+
+    if (esPermitido) {
+      return callback(null, true);
+    }
+
+    return callback(new Error(`Bloqueado por CORS: origen '${origin}' no autorizado`));
+  },
   credentials: true,
 }));
 
